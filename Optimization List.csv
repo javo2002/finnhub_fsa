@@ -1,0 +1,10 @@
+1.) Find a way to fetch the body of an article targeting the <p> html
+2.) conduct a sentiment on that body
+
+
+
+-----
+For yfinance. See if you can obtain the quote that is on the rise
+
+main.py is the code without pretrained AI
+main2.0 is the pretrained AI code
