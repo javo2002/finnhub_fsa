@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7599376c-f773-4bb0-bdd5-71109a14a61c" name="Changes" comment="FSA">
-      <change afterPath="$PROJECT_DIR$/visual.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_24,_11_48 AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_11_24__11_48AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/closing.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minute_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/not_in_use/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/not_in_use/data2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Optimization List.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Optimization List.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/3dpyplot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news_data_with_sentiments.csv" beforeDir="false" afterPath="$PROJECT_DIR$/news_data_with_sentiments.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/not_in_use/modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/not_in_use/modifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_ch.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_ch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yfinance1.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -82,7 +86,7 @@
     "Python.yfinance1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "main2",
     "last_opened_file_path": "/Users/javi/PycharmProjects/SentimentAnalysis/pythonProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -367,7 +371,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
