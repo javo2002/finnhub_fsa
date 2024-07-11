@@ -1,7 +1,3 @@
-Sure, here's a detailed README file for your GitHub repository:
-
----
-
 # Finnhub Financial Sentiment Analysis
 
 This project is designed to fetch company news data, process it for sentiment analysis, calculate stock trends and volatility, and visualize the correlation between these factors. The code is written in Python and leverages several libraries including `requests`, `pandas`, `finnhub`, `concurrent.futures`, and `pytz`.
@@ -155,5 +151,3 @@ def format_news_article(self, article):
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to customize this README to better fit your project's specifics. This should provide a clear guide for anyone looking to understand and use your code.
