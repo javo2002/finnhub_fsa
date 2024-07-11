@@ -135,9 +135,9 @@ class NewsProcessor:
 
 
 if __name__ == "__main__":
-    api_key = 'cpmethpr01quf620vds0cpmethpr01quf620vdsg'
-    quotes = ['LCFY']
-    start_date = "2024-06-01"
-    end_date = "2024-07-11"
+    api_key = 'API KEY'
+    quotes = ['AAPL'] #Change for desired ticker
+    start_date = "xxxx-xx-xx" #Year-Mo-Day
+    end_date = "xxxx-xx-xx"
     processor = NewsProcessor(api_key, start_date, end_date)
     processor.run(quotes)
