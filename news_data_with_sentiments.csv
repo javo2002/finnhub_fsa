@@ -1,2 +1,2 @@
-Date,Quote,URL,Sentiment
-2024-06-24 23:16:00,AAPL,https://finnhub.io/api/news?id=4838eeba1ae848a624c444b9f11e64760f0dfbf0345b393a328733466f6342f8,Negative
+Date,Quote,URL,Body Sentiment,Trend Sentiment,Volatility
+2024-06-03 16:10:00,LCFY,https://finnhub.io/api/news?id=a5736c99b618d66e1166c7a9bb40a1eba37920efde67af0ecdb96954d15524b5,0.6249,1.0,1.385864779009862
