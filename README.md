@@ -67,7 +67,6 @@ Here are the key parameters you need to configure:
    The necessary libraries are imported and the `NewsProcessor` class is initialized with key parameters.
 
 ```python
-import requests
 import pandas as pd
 import time
 import finnhub
