@@ -1,6 +1,6 @@
 # Finnhub Financial Sentiment Analysis
 
-This project is designed to fetch company news data, process it for sentiment analysis, calculate stock trends and volatility, and visualize the correlation between these factors. The code is written in Python and leverages several libraries including `pandas`, `finnhub`, `concurrent.futures`, and `pytz`.
+This project is designed to fetch company news data, process it for sentiment analysis, calculate stock trends and volatility, and visualize the correlation between these factors. The code is written in Python and leverages several libraries including `pandas`, `time`, `finnhub`, `concurrent.futures`, and `pytz`.
 
 ## Table of Contents
 1. [Installation](#installation)
