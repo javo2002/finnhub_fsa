@@ -1,152 +1,89 @@
 # Finnhub Financial Sentiment Analysis
 
-This project is designed to fetch company news data, process it for sentiment analysis, calculate stock trends and volatility, and visualize the correlation between these factors. The code is written in Python and leverages several libraries including `pandas`, `time`, `finnhub`, `concurrent.futures`, and `pytz`.
+## Project Overview
 
-## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Configuration](#configuration)
-4. [Understanding the Code](#understanding-the-code)
-5. [License](#license)
+This project is designed to perform comprehensive financial sentiment analysis using data from a finviz financial API. The primary goal is to analyze stock sentiment and visualize the results to aid in making informed investment decisions. The project includes several scripts that handle data retrieval, processing, sentiment analysis, and visualization.
 
-## Installation
+## Repository Structure
 
-To get started with this project, you need to have Python installed on your machine. Follow these steps to set up the project:
+- **Scripts:**
+  - `fv_api_screener.py`: Script to screen financial data using API.
+  - `fv_screener_processor.py`: Processor for handling the screened financial data.
+  - `main_finviz.py`: Main script integrating various components for Finviz data analysis.
+  - `sentiment.py`: Script for performing sentiment analysis on financial news data.
+  - `stock_ch.py`: Script retrieve stock changes from screener script.
+  - `visual.py`: Script to visualize the financial sentiment analysis results.
+- **Data Files:**
+  - `screener.csv`: CSV file containing screened financial data.
+  - `news_data_with_sentiments.csv`: CSV file containing financial news data with sentiment analysis results.
 
-1. **Clone the Repository:**
+## Setup Instructions
 
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/javo2002/finnhub_fsa.git
 cd finnhub_fsa
 ```
 
-2. **Install Required Packages:**
-
+### 2. Install Required Packages
 ```bash
-pip install requests pandas finnhub-python concurrent.futures pytz
+pip install -r requirements.txt
 ```
 
 ## Usage
 
-To run the news processing and sentiment analysis, follow these steps:
+### 1. Configure API Key and Screener in `fv_api_screener.py`
+- Open `fv_api_screener.py`.
+- Input your API key in the designated variable.
+- Configure the screener settings according to your needs.
+- Update the scheduling times to define when the screener should run.
 
-1. **Set API Key and Date Range:**
-
-   Open the `main.py` file and update the `api_key`, `start_date`, and `end_date` variables:
-
-```python
-api_key = 'YOUR_FINNHUB_API_KEY'
-quotes = ['AAPL']  # Change to desired ticker symbols
-start_date = "yyyy-mm-dd"  # Start date in Year-Month-Day format
-end_date = "yyyy-mm-dd"    # End date in Year-Month-Day format
-```
-
-2. **Run the Script:**
-
-   Execute the script using Python:
-
+### 2. Run the Screener
 ```bash
-python main.py
+python fv_api_screener.py
 ```
 
-## Configuration
-
-Here are the key parameters you need to configure:
-
-- `api_key`: Your Finnhub API key.
-- `quotes`: A list of stock ticker symbols you want to analyze.
-- `start_date`: The start date for fetching news articles (format: yyyy-mm-dd).
-- `end_date`: The end date for fetching news articles (format: yyyy-mm-dd).
-
-## Understanding the Code
-
-### Key Components
-
-1. **Imports and Class Initialization:**
-
-   The necessary libraries are imported and the `NewsProcessor` class is initialized with key parameters.
-
-```python
-import pandas as pd
-import time
-import finnhub
-import concurrent.futures
-from stock_ch import calculate_trend, calculate_volatility
-from sentiment import body_sentiment, stock_statistical_values
-from datetime import datetime, timezone
-from visual import visualize_correlation
-import pytz
+### 3. Process Screened Data (Optional)
+- Execute `fv_screener_processor.py` to view the processed financial data.
+```bash
+python fv_screener_processor.py
 ```
 
-2. **Fetching Company News:**
+### 4. Configure Dates in `main_finviz.py`
+- Open `main_finviz.py`.
+- Input the desired start and end dates for your analysis in correct format.
 
-   The `fetch_company_news` method retrieves news articles for a given stock ticker symbol within the specified date range.
-
-```python
-def fetch_company_news(self, quote):
-    ...
+### 5. Run the Main Script
+- This integrates various components such as `fv_screener_processor.py`, `stock_ch.py`, `sentiment.py`, and `visual.py`, to performs the primary data analysis.
+```bash
+python main_finviz.py
 ```
 
-3. **Concurrent News Fetching:**
+### 6. Final Analysis
+- View **news_data_with_sentiments.csv:** and graph to inspect analyze results
 
-   The `fetch_news` method retrieves news data for multiple stock ticker symbols concurrently.
 
-```python
-def fetch_news(self, quotes):
-    ...
-```
+## Data Files
 
-4. **Stock Trend and Sentiment Calculation:**
+- **screener.csv:** Contains the screened financial data.
+- **news_data_with_sentiments.csv:** Contains financial news data along with sentiment analysis results.
 
-   The `stock_trend_sentiments` method updates the sentiment based on stock price changes.
+## Advanced Configuration
 
-```python
-def stock_trend_sentiments(self, quotes):
-    ...
-```
+### Customizing Sentiment Analysis
+In `sentiment.py`, you can customize the sentiment analysis parameters to better suit your needs. This includes adjusting the sentiment thresholds and integrating additional sentiment analysis tools.
 
-5. **Calculating Stock Volatility:**
-
-   The `calculate_stock_volatility` method calculates the volatility for a given stock ticker symbol.
-
-```python
-def calculate_stock_volatility(self, quote):
-    ...
-```
-
-6. **Processing News and Sentiments:**
-
-   The `process_news_and_sentiments` method processes the fetched news data and updates the sentiments.
-
-```python
-def process_news_and_sentiments(self, news_data):
-    ...
-```
-
-7. **Main Execution Loop:**
-
-   The `run` method contains the main loop that periodically fetches and processes news data.
-
-```python
-def run(self, quotes, interval=120):
-    ...
-```
-
-8. **Helper Methods:**
-
-   - `extract_sentiment_from_url`: Extracts sentiment from a given URL.
-   - `format_news_article`: Formats a news article for DataFrame storage.
-
-```python
-def extract_sentiment_from_url(self, url):
-    ...
-
-def format_news_article(self, article):
-    ...
-```
+### Visualization Settings
+In `visual.py`, you can configure various visualization settings to enhance the graphical representation of your data. This includes setting specific colors, labels, and plotting styles.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries, please contact Javo at [javi22.college@gmail.com](mailto:jnw5354@psu.edu).
 
 ---
+
+Feel free to provide additional details or specific enhancements you would like included in the README.
