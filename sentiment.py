@@ -19,24 +19,12 @@ def sentiment_analyzer(text):
     return score['compound']
 
 
-def num_sentiment_analyzer(num):
-    score = sia.polarity_scores(num)
-    return score
-
-
 def body_sentiment(url):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
     paragraphs = soup.find_all('p')
     combined_text = " ".join([p.get_text() for p in paragraphs])
     return sentiment_analyzer(combined_text)
-
-
-# print(body_sentiment('https://finnhub.io/api/news?id=704bafa163722911e753ed7aeffba53084c83b7e16412886796f5310d5ca4d2e'))
-num = "There was a drop in the company's stock price, which fell by 3.5% over the past hour"
-
-
-# print(num_sentiment_analyzer(num))
 
 
 def adjust_sentiment_for_number(sentiment_score, percentage):
@@ -56,30 +44,20 @@ def adjust_sentiment_for_number(sentiment_score, percentage):
     return sentiment_score['compound']
 
 
-# Example sentences with numerical context
-
-def stock_statistical_values(percentage):
+def stock_statistical_values(percentage, quote):
     # print('Higher volatility indicates stock is more likely to swing; recommended for short-term investments')
     # print('Lower volatility indicates stock is less likely to swing; recommended for long-term investments')
     if percentage > 0:
-        sentence = f"There was a rise in the company's stock price, which increased by {percentage}% for today's current trading period"
+        sentence = f"There was a rise in the {quote}'s stock price, which increased by {percentage}% for today's current trading period"
     elif percentage < 0:
-        sentence = f"There was a drop in the company's stock price, which fell by {percentage}% for today's currenttrading period"
+        sentence = f"There was a drop in the {quote}'s stock price, which fell by {percentage}% for today's currenttrading period"
     else:
         return None
     print(sentence)
 
     # Analyze the sentiment
     sentiment_scores = sia.polarity_scores(sentence)
-    # print(sentiment_scores)
-    # Adjust sentiment score based on the numerical value
+    # Adjust sentiment score based on the stock change value
     adjusted_sentiment_scores = adjust_sentiment_for_number(sentiment_scores, percentage)
 
     return adjusted_sentiment_scores
-
-# print(stock_statistical_values(102,.6))
-# sentiment starting point for stock change developed headline:
-# for positive headline: 0.2732,
-# for negative headline: -0.2732
-
-# .1x*(+-0.2732) = Updates sentiment
