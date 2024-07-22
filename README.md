@@ -1,4 +1,4 @@
-# Finnhub Financial Sentiment Analysis
+# Finviz Financial Sentiment Analysis
 
 ## Project Overview
 
