@@ -82,7 +82,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries, please contact Javo at [javi22.college@gmail.com](mailto:jnw5354@psu.edu).
+For any inquiries, please contact creator at [jnw5354@psu.edu](mailto:jnw5354@psu.edu).
 
 ---
 
