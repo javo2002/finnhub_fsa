@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import os
 import requests
 import time
@@ -8,11 +9,14 @@ from datetime import datetime
 def export_screener_data():
     # Define the base screener URL
     base_url = "https://elite.finviz.com/export.ashx"
-    filters = "v=111&f=sh_curvol_o2000,sh_relvol_o5&ft=4&ar=60"
+    filters = "v=152&p=i1&f=cap_0.01to,geo_usa|china|france|europe|australia|belgium|canada|chinahongkong|germany|hongkong|iceland|japan|newzealand|ireland|netherlands|norway|singapore|southkorea|sweden|taiwan|unitedarabemirates|unitedkingdom|switzerland|spain,sh_curvol_o100,sh_price_u50,sh_relvol_o2,ta_change_u&ft=4&o=sharesfloat&r=81&ar=10"
 
-    # Retrieve the auth token from environment variables
+
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Access the environment variable
     auth_token = os.getenv("FINVIZ_API_TOKEN")
-
     # Construct the full URL
     url = f"{base_url}?{filters}&auth={auth_token}"
 
