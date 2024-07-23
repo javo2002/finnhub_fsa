@@ -32,34 +32,37 @@ pip install -r requirements.txt
 
 ## Usage
 
-### 1. Configure API Key and Screener in `fv_api_screener.py`
-- Open `fv_api_screener.py`.
+### 1. Input API Key into `.env` file
+- Open `.env`.
 - Input your API key in the designated variable.
+  
+### 2. Configure API Key and Screener in `fv_api_screener.py`
+- Open `fv_api_screener.py`.
 - Configure the screener settings according to your needs.
 - Update the scheduling times to define when the screener should run.
 
-### 2. Run the Screener
+### 3. Run the Screener
 ```bash
 python fv_api_screener.py
 ```
 
-### 3. Process Screened Data (Optional)
+### 4. Process Screened Data (Optional)
 - Execute `fv_screener_processor.py` to view the processed financial data.
 ```bash
 python fv_screener_processor.py
 ```
 
-### 4. Configure Dates in `main_finviz.py`
+### 5. Configure Dates in `main_finviz.py`
 - Open `main_finviz.py`.
 - Input the desired start and end dates for your analysis in correct format.
 
-### 5. Run the Main Script
+### 6. Run the Main Script
 - This integrates various components such as `fv_screener_processor.py`, `stock_ch.py`, `sentiment.py`, and `visual.py`, to performs the primary data analysis.
 ```bash
 python main_finviz.py
 ```
 
-### 6. Final Analysis
+### 7. Final Analysis
 - View **news_data_with_sentiments.csv:** and graph to inspect analyze results
 
 
