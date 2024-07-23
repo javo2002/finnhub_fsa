@@ -65,6 +65,13 @@ python main_finviz.py
 ### 7. Final Analysis
 - View **news_data_with_sentiments.csv:** and graph to inspect analyze results
 
+### 8. Compare Sentiment tools (Optional)
+- Current sentiment analyzer in use is NLTK
+- Save the **news_data_with_sentiments.csv:** as **news_data_with_nltk_sentiments.csv:**
+- To switch to finVader change `from sentiment_nltk import body_sentiment, stock_statistical_values` in `main_finviz.py` to `from sentiment_finVader import body_sentiment, stock_statistical_values`
+- Run the main script and save **news_data_with_sentiments.csv:** as **news_data_with_finvader_sentiments.csv:**
+- Failure to save files will cause the nltk file to be overwritten
+
 
 ## Data Files
 
