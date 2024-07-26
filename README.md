@@ -74,7 +74,9 @@ python centralizer.py
 
 ### 8. Run `main.py`
 - Make sure that your computer is running and is connected to a power source for optimal connectivity. Failure to maintain connection will break the pending code.
-
+```bash
+python main.py
+```
 
 ### 9. Final Analysis
 - View **news_data_with_sentiments.csv:** and graph to inspect analyze results
