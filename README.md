@@ -14,6 +14,7 @@ This project is designed to perform comprehensive financial sentiment analysis u
   - `sentiment.py`: Script for performing sentiment analysis on financial news data.
   - `stock_ch.py`: Script retrieve stock changes from screener script.
   - `visual.py`: Script to visualize the financial sentiment analysis results.
+  - `logger.py`: Logs the sentiment data to a file for later analysis.
 - **Data Files:**
   - `screener.csv`: CSV file containing screened financial data.
   - `news_data_with_sentiments.csv`: CSV file containing financial news data with sentiment analysis results.
@@ -48,7 +49,7 @@ pip install -r requirements.txt
 python fv_api_screener.py
 ```
 
-### 4. Run `fv_screener_processor.py` to process screened data (Optional)
+### 4. Run `fv_screener_processor.py` to Process Screened Data (Optional)
 - Open `fv_screener_processor.py`
 - Execute `fv_screener_processor.py` to view the processed financial data.
 ```bash
@@ -66,10 +67,10 @@ python fv_screener_processor.py
 python centralizer.py
 ```
 
-### 7.Configure scheduled and incremental loop times in `main.py`
+### 7.Configure Scheduled and Incremental Loop Times in `main.py`
 - Before finalizing scheduled times, configure for execution to be done within the next few minutes to ensure that the script will begin on time
 - Ensure that jobs are not scheduled to run at same times, as the order in which data should be recieved will result in failure if executed in the wrong order
-  - Tip: Recommended executions should be (job1 -> 07:00:00, job2 -> 07:00:03, job3 -> 07:00:15)
+  - Tip: Recommended executions should be (job1 -> initial time, job2 -> +3 seconds after job1, job3 -> +15 seconds after job2)
 
 ### 8. Run `main.py`
 - Make sure that your computer is running and is connected to a power source for optimal connectivity. Failure to maintain connection will break the pending code.
@@ -78,7 +79,7 @@ python centralizer.py
 ### 9. Final Analysis
 - View **news_data_with_sentiments.csv:** and graph to inspect analyze results
 
-### 10. Compare Sentiment tools (Optional)
+### 10. Compare Sentiment Tools (Optional)
 - Current sentiment analyzer in use is NLTK
 - Save the **news_data_with_sentiments.csv:** as **news_data_with_nltk_sentiments.csv:**
 - To switch to finVader change `from sentiment_nltk import body_sentiment, stock_statistical_values` in `main_finviz.py` to `from sentiment_finVader import body_sentiment, stock_statistical_values`
@@ -98,6 +99,9 @@ In `sentiment.py`, you can customize the sentiment analysis parameters to better
 
 ### Visualization Settings
 In `visual.py`, you can configure various visualization settings to enhance the graphical representation of your data. This includes setting specific colors, labels, and plotting styles.
+
+### Customizing Logger Output
+In `Logger.py`, you can customize the way data is retrieved from `news_data_with_sentiments.csv` for narrowing down on the retrieved data. This can aid in later analysis and cooperative analysis.
 
 ## License
 
