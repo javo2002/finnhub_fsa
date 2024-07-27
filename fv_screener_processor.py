@@ -18,9 +18,6 @@ stock_change_column = 'Change'  # Replace with your actual column name
 # Drop rows with NaN values in the stock change column
 df.dropna(subset=[stock_change_column], inplace=True)
 
-# if max(df['No.']) >= 10:
-#     # Select the top 10 rows, or fewer if there are less than 10 rows in the DataFrame
-#    df = df.head(10)
 tickers = list(df['Ticker'].unique())
 print(tickers)
 pd.set_option('display.max_colwidth', None)
@@ -29,10 +26,9 @@ pd.set_option('display.max_columns', None)
 
 ticker_change_dict = dict(zip(df['Ticker'], df[stock_change_column]))
 
-# print(change_value)
 # Print the dictionary
 # print("Ticker-Change Dictionary:", ticker_change_dict)
 
+# Print the retrieved tickers
 # print(tickers)
-# print(df)
 
