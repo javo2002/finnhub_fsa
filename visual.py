@@ -1,11 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as np
+from datetime import datetime
 
 
 def visualize_correlation(file):
     # Load the expanded CSV file
+
+    # Get the current date and time
+    now = datetime.now()
+
+    # Format the current month, day, hour, and minute into a single string
+    now = now.strftime("%m/%d %H:%M")
 
     data = pd.read_csv(file)
 
@@ -33,15 +39,15 @@ def visualize_correlation(file):
     # Add quadrant names
     plt.text(body_threshold + 0.8, trend_threshold + 0.8, 'Optimistic\n1', fontsize=15, ha='center', va='bottom',
              alpha=0.5)
-    plt.text(body_threshold + 0.8, trend_threshold - 0.8, 'Conflicted\n2', fontsize=15, ha='center', va='top',
+    plt.text(body_threshold + 0.8, trend_threshold - 0.8, 'Conflicted\n4', fontsize=15, ha='center', va='top',
              alpha=0.5)
-    plt.text(body_threshold - 0.8, trend_threshold + 0.8, 'Contrarian\n3', fontsize=15, ha='center', va='bottom',
+    plt.text(body_threshold - 0.8, trend_threshold + 0.8, 'Contrarian\n2', fontsize=15, ha='center', va='bottom',
              alpha=0.5)
-    plt.text(body_threshold - 0.8, trend_threshold - 0.8, 'Pessimistic\n4', fontsize=15, ha='center', va='top',
+    plt.text(body_threshold - 0.8, trend_threshold - 0.8, 'Pessimistic\n3', fontsize=15, ha='center', va='top',
              alpha=0.5)
 
     # Add titles and labels
-    plt.title('Sentiment Analysis of Financial Stocks')
+    plt.title(f'Sentiment Analysis of Financial Stocks {now}')
     plt.xlabel('Article Sentiment')
     plt.ylabel('Stock Trend Sentiment')
     plt.grid(True)
@@ -52,6 +58,7 @@ def visualize_correlation(file):
 
     plt.tight_layout()
     return plt.show()
+
 
 '''
 Quadrant 1
