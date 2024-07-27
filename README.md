@@ -18,7 +18,7 @@ This project is designed to perform comprehensive financial sentiment analysis u
 - **Data Files:**
   - `screener.csv`: CSV file containing screened financial data.
   - `news_data_with_sentiments.csv`: CSV file containing financial news data with sentiment analysis results.
-
+  - `sentiment_analysis.log`: .log file that will keep track of sentiment scores through the duration of execution
 ## Setup Instructions
 
 ### 1. Clone the Repository
@@ -90,11 +90,13 @@ python main.py
 - View **news_data_with_sentiments.csv:** and graph to inspect analyze results
 
 ### 10. Compare Sentiment Tools (Optional)
-- Current sentiment analyzer in use is NLTK
-- Save the **news_data_with_sentiments.csv:** as **news_data_with_nltk_sentiments.csv:**
+- Starting sentiment analyzer in use is NLTK
 - To switch to finVader change `from sentiment_nltk import body_sentiment, stock_statistical_values` in `main_finviz.py` to `from sentiment_finVader import body_sentiment, stock_statistical_values`
-- Run the main script and save **news_data_with_sentiments.csv:** as **news_data_with_finvader_sentiments.csv:**
-- Failure to save files will cause the nltk file to be overwritten
+
+### 11. Analyze Logger
+- Utilize the search command to target specific dates or tickers
+  - Time example: "2024-07-27 19:45:34"
+  - Ticker search example: "TSLA"
 
 ## Data Files
 
