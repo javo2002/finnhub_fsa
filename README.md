@@ -31,7 +31,12 @@ cd finnhub_fsa
 ```bash
 pip install -r requirements.txt
 ```
-
+- It is recommended to install through the terminal so if any errors occur, a detailed explanation of the issue is explained. Here are some solutions to reoccuring issues when setting up projects
+  - ```bash
+    pip install --upgrade setuptools wheel
+    pip install python-dotenv
+    ```
+  -
 ## Usage
 
 ### 1. Input API Key into `.env` file
