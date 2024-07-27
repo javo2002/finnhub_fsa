@@ -53,6 +53,7 @@ pip install -r requirements.txt
 ```bash
 python fv_api_screener.py
 ```
+- You may need to uncomment printing the API token to ensure that it is fetched
 
 ### 4. Run `fv_screener_processor.py` to Process Screened Data (Optional)
 - Open `fv_screener_processor.py`
