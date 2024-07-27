@@ -1,7 +1,5 @@
 import pandas as pd
 import logging
-import schedule
-import time
 
 # Set up logging configuration
 logging.basicConfig(
