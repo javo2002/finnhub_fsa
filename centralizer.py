@@ -4,7 +4,7 @@ import concurrent.futures
 from finvizfinance.quote import finvizfinance
 import fv_screener_processor
 from stock_ch import extract_change
-from sentiment import body_sentiment, stock_statistical_values
+from sentiment_nltk import body_sentiment, stock_statistical_values
 from visual import visualize_correlation
 
 
@@ -79,22 +79,21 @@ class NewsProcessor:
 
         return news_df[['Date', 'Quote', 'Link', 'Body Sentiment', 'Trend Sentiment']]
 
-    def run(self, quotes, interval=600):
-        while True:
-            news_data = self.fetch_news(quotes)
-            self.fetch_trend_sentiments(quotes)
-            if news_data:
-                processed_df = self.process_news_data(news_data)
-                # print(processed_df)
-                processed_df.to_csv('news_data_with_sentiments.csv', index=False)
-                visualize_correlation('news_data_with_sentiments.csv')
-                print("News data with sentiments saved to news_data_with_sentiments.csv")
-            time.sleep(interval)
+    def run(self, quotes):
+        news_data = self.fetch_news(quotes)
+        self.fetch_trend_sentiments(quotes)
+        if news_data:
+            processed_df = self.process_news_data(news_data)
+            # print(processed_df)
+            processed_df.to_csv('news_data_with_sentiments.csv', index=False)
+            visualize_correlation('news_data_with_sentiments.csv')
+            print("News data with sentiments saved to news_data_with_sentiments.csv")
+
 
 
 if __name__ == "__main__":
-    start_date = "2024-07-19"
-    end_date = "2024-07-22"
+    start_date = "2024-07-25"
+    end_date = "2024-07-26"
     quotes = fv_screener_processor.tickers
     processor = NewsProcessor(start_date, end_date)
     processor.run(quotes)
