@@ -36,7 +36,9 @@ pip install -r requirements.txt
     pip install --upgrade setuptools wheel
     pip install python-dotenv
     ```
-  -
+### 3. Supporting Code Indications
+  - Throughout the code there will be commented out print functions that will help aid in understanding where the code might have gone wrong
+
 ## Usage
 
 ### 1. Input API Key into `.env` file
@@ -93,7 +95,6 @@ python main.py
 - To switch to finVader change `from sentiment_nltk import body_sentiment, stock_statistical_values` in `main_finviz.py` to `from sentiment_finVader import body_sentiment, stock_statistical_values`
 - Run the main script and save **news_data_with_sentiments.csv:** as **news_data_with_finvader_sentiments.csv:**
 - Failure to save files will cause the nltk file to be overwritten
-
 
 ## Data Files
 
