@@ -18,6 +18,7 @@ stock_change_column = 'Change'  # Replace with your actual column name
 # Drop rows with NaN values in the stock change column
 df.dropna(subset=[stock_change_column], inplace=True)
 
+# No duplicate tickers
 tickers = list(df['Ticker'].unique())
 print(tickers)
 pd.set_option('display.max_colwidth', None)
