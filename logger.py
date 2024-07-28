@@ -7,6 +7,8 @@ class CustomFilter(logging.Filter):
     def filter(self, record):
         if not hasattr(record, 'ticker'):
             record.ticker = ''
+        if not hasattr(record, 'link'):
+            record.link = ''
         if not hasattr(record, 'body_sentiment'):
             record.body_sentiment = ''
         if not hasattr(record, 'trend_sentiment'):
@@ -31,7 +33,7 @@ fh = logging.FileHandler('sentiment_analysis.log')
 fh.setLevel(logging.INFO)
 
 # Create and set custom formatter
-formatter = CustomFormatter('%(ticker)s - Body Sentiment: %(body_sentiment)s - Trend Sentiment: %(trend_sentiment)s')
+formatter = CustomFormatter('%(ticker)s - Body Sentiment: %(body_sentiment)s - Trend Sentiment: %(trend_sentiment)s - Link: %(link)s')
 fh.setFormatter(formatter)
 
 # Add filter and handler to logger
@@ -43,7 +45,7 @@ def log_sentiments(csv_file):
         csv_reader = csv.DictReader(file)
         for row in csv_reader:
             logger.info('Processing sentiment data',
-                        extra={'ticker': row['Quote'], 'body_sentiment': row['Body Sentiment'], 'trend_sentiment': row['Trend Sentiment']})
+                        extra={'ticker': row['Quote'], 'link': row['Link'], 'body_sentiment': row['Body Sentiment'], 'trend_sentiment': row['Trend Sentiment']})
 
 if __name__ == "__main__":
     log_sentiments('news_data_with_sentiments.csv')
