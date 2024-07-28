@@ -18,7 +18,7 @@ This project is designed to perform comprehensive financial sentiment analysis u
 - **Data Files:**
   - `screener.csv`: CSV file containing screened financial data.
   - `news_data_with_sentiments.csv`: CSV file containing financial news data with sentiment analysis results.
-  - `sentiment_analysis.log`: .log file that will keep track of sentiment scores through the duration of execution
+  - `sentiment_analysis.log`: .log file that will keep track of sentiment scores through the duration of execution.
 ## Setup Instructions
 
 ### 1. Clone the Repository
@@ -31,13 +31,13 @@ cd finnhub_fsa
 ```bash
 pip install -r requirements.txt
 ```
-- It is recommended to install through the terminal so if any errors occur, a detailed explanation of the issue is explained. Here are some solutions to reoccuring issues when setting up projects
+- It is recommended to install through the terminal so if any errors occur, a detailed explanation of the issue is explained. Here are some solutions to reoccuring issues when setting up projects.
   - ```bash
     pip install --upgrade setuptools wheel
     pip install python-dotenv
     ```
 ### 3. Supporting Code Indications
-  - Throughout the code there will be commented out print functions that will help aid in understanding where the code might have gone wrong
+  - Throughout the code there will be commented out print functions that will help aid in understanding where the code might have gone wrong.
 
 ## Usage
 
@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```bash
 python fv_api_screener.py
 ```
-- You may need to uncomment printing the API token to ensure that it is fetched
+- You may need to uncomment printing the API token to ensure that it is fetched.
 
 ### 4. Run `fv_screener_processor.py` to Process Screened Data (Optional)
 - Open `fv_screener_processor.py`
@@ -76,9 +76,9 @@ python centralizer.py
 ```
 
 ### 7.Configure Scheduled and Incremental Loop Times in `main.py`
-- Before finalizing scheduled times, configure for execution to be done within the next few minutes to ensure that the script will begin on time
-- Ensure that jobs are not scheduled to run at same times, as the order in which data should be recieved will result in failure if executed in the wrong order
-  - Tip: Recommended executions should be (job1 -> initial time, job2 -> +3 seconds after job1, job3 -> +15 seconds after job2)
+- Before finalizing scheduled times, configure for execution to be done within the next few minutes to ensure that the script will begin on time.
+- Ensure that jobs are not scheduled to run at same times, as the order in which data should be recieved will result in failure if executed in the wrong order.
+  - Tip: Recommended executions should be (job1 -> initial time, job2 -> +3 seconds after job1, job3 -> +15 seconds after job2).
 
 ### 8. Run `main.py`
 - Make sure that your computer is running and is connected to a power source for optimal connectivity. Failure to maintain connection will break the pending code.
@@ -87,7 +87,7 @@ python main.py
 ```
 
 ### 9. Final Analysis
-- View **news_data_with_sentiments.csv:** and graph to inspect analyze results
+- View **news_data_with_sentiments.csv:** and graph to inspect analyze results.
 
 ### 10. Compare Sentiment Tools (Optional)
 - Starting sentiment analyzer in use is NLTK
@@ -97,6 +97,7 @@ python main.py
 - Utilize the search command to target specific dates or tickers
   - Time example: "2024-07-27 19:45:34"
   - Ticker search example: "TSLA"
+- Tickers will be grouped by time stamps.
 
 ## Data Files
 
