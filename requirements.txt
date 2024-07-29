@@ -1,0 +1,3 @@
+#Copy and paste into terminal (make sure you are in the correct path)
+
+pip install beautifulsoup4 finnhub-python finviz finvizfinance matplotlib nltk numpy pandas requests schedule seaborn vaderSentiment dotenv
