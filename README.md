@@ -16,6 +16,7 @@ This project is designed to perform comprehensive financial sentiment analysis u
   - `visual.py`: Script to visualize the financial sentiment analysis results.
   - `logger.py`: Logs the sentiment data to a file for later analysis.
 - **Data Files:**
+  - `requirements.txt`: All required packages
   - `screener.csv`: CSV file containing screened financial data.
   - `news_data_with_sentiments.csv`: CSV file containing financial news data with sentiment analysis results.
   - `sentiment_analysis.log`: .log file that will keep track of sentiment scores through the duration of execution.
@@ -28,10 +29,9 @@ cd finnhub_fsa
 ```
 
 ### 2. Install Required Packages
-```bash
-pip install -r requirements.txt
-```
-- It is recommended to install through the terminal so if any errors occur, a detailed explanation of the issue is explained. Here are some solutions to reoccuring issues when setting up projects.
+- Retrieve from requirements.txt file
+- It is recommended to install through the terminal so if any errors occur, a detailed explanation of the issue is explained.
+- Here are some solutions to reoccuring issues when setting up projects:
   - ```bash
     pip install --upgrade setuptools wheel
     pip install python-dotenv
