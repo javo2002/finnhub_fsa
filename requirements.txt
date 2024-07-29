@@ -1,3 +1,8 @@
-#Copy and paste into terminal (make sure you are in the correct path)
+#Copy and paste this code into terminal (make sure you are in the correct path):
 
-pip install beautifulsoup4 finnhub-python finviz finvizfinance matplotlib nltk numpy pandas requests schedule seaborn vaderSentiment dotenv
+pip install beautifulsoup4 finnhub-python finviz finvizfinance matplotlib nltk numpy pandas requests schedule seaborn vaderSentiment vaderSentiment dotenv
+
+#If errors occur run this code:
+
+pip install --upgrade setuptools wheel
+pip install python-dotenv
